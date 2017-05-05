@@ -28,7 +28,10 @@ class NewsSearchContainer extends Component {
   render() {
     return (
       <div>
-        <NewsSearch sources={this.state.sources}/>
+        {this.state.sources.length ?
+          <NewsSearch sources={this.state.sources} /> :
+          <div className="loading">Loading ...</div>
+        }
       </div>
     );
   }
